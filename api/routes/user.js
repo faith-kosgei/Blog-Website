@@ -28,7 +28,15 @@ router.put("/:id", async (req, res) => {
         res.status(401).json("You can update your account ")
     }
     
-    
+})
+
+// Delete a User
+router.delete("/:id", async (req, res) => {
+    if(req.params.userId === req.params.id){
+        if(req.body.password){
+            
+        }
+    }
 })
 
 
