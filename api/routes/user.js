@@ -33,8 +33,22 @@ router.put("/:id", async (req, res) => {
 // Delete a User
 router.delete("/:id", async (req, res) => {
     if(req.params.userId === req.params.id){
-        if(req.body.password){
-            
+        // delete all post of  user and user account
+        
+
+        try{
+            const user = await User.findById(req.params.id)
+
+            try {
+                await Post.deleteMany({username:user.username})
+            } catch (error) {
+
+                
+            }
+
+
+        }catch(error){
+
         }
     }
 })
