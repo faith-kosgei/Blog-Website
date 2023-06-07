@@ -3,6 +3,7 @@ const User = require("../models/user");
 const Post = require("../models/post")      
 const bcrypt = require("bcrypt");
 
+// Update User 
 router.put("/:id", async (req, res) => {
     if(req.body.userId === req.params.id){
         if(req.body.password){
